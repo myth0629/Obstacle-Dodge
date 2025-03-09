@@ -5,13 +5,20 @@ public class FlyAtPlayer : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] float speed = 5f;
     Vector3 playerPosition;
+
+    void Awake()   
+    {   
+        gameObject.SetActive(false);
+    }
+
     void Start()
     {
-        playerPosition = player.transform.position;
+        
     }
 
     void Update()
     {
+        playerPosition = player.transform.position;
         OnDestroy();
         MoveToPlayer();
     }
